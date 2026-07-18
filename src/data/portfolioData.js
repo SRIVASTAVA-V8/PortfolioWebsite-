@@ -54,8 +54,8 @@ export const projects = [
   },
   {
     id: 2,
-    title: 'Task Management System',
-    description: 'Developed a Task Management System with role-based dashboards, real-time task monitoring, proof uploads, and analytics using Chart.js.',
+    title: 'Project Management System',
+    description: 'A production-ready MEAN stack platform designed for software teams. It integrates agile workflows (sprints & Kanban), RBAC security, real-time collaboration.',
     tech: ['Angular.js', 'Bootstrap', 'Node.js', 'MongoDb', 'chart.js'],
     image: '✅',
     category: 'fullstack',
