@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Phone, Send, CheckCircle } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle } from 'lucide-react';
 import { FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
 import { personalInfo } from '../data/portfolioData';
 
@@ -8,7 +8,7 @@ const Contact = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -20,10 +20,8 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
+
     setTimeout(() => {
-      console.log('Form Data:', formData);
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -33,14 +31,13 @@ const Contact = () => {
 
   const contactMethods = [
     { icon: Mail, label: 'Email', value: personalInfo.email, href: `mailto:${personalInfo.email}` },
-    // { icon: Phone, label: 'Phone', value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
     { icon: MapPin, label: 'Location', value: personalInfo.location, href: null },
   ];
 
   const socialLinks = [
-    { icon: FiGithub, href: '#', label: 'GitHub' },
-    { icon: FiLinkedin, href: '#', label: 'LinkedIn' },
-    { icon: FiTwitter, href: '#', label: 'Twitter' },
+    { icon: FiGithub, href: 'https://github.com', label: 'GitHub' },
+    { icon: FiLinkedin, href: 'https://www.linkedin.com', label: 'LinkedIn' },
+    { icon: FiTwitter, href: 'https://x.com', label: 'Twitter' },
   ];
 
   return (
@@ -51,17 +48,15 @@ const Contact = () => {
         </h2>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Left Column - Contact Info */}
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold mb-4">Let's work together!</h3>
               <p className="text-gray-400">
-                I'm currently available for freelance work or full-time positions. 
+                I'm currently available for freelance work or full-time positions.
                 Feel free to reach out if you have any questions or just want to connect!
               </p>
             </div>
 
-            {/* Contact Methods */}
             <div className="space-y-4">
               {contactMethods.map((method, index) => (
                 <div key={index} className="flex items-center gap-4 p-4 bg-dark-100 rounded-xl">
@@ -82,7 +77,6 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Social Links */}
             <div>
               <h4 className="font-semibold mb-4">Connect with me</h4>
               <div className="flex gap-4">
@@ -90,6 +84,8 @@ const Contact = () => {
                   <a
                     key={index}
                     href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
                     className="w-10 h-10 bg-dark-100 rounded-full flex items-center justify-center hover:bg-primary-500 transition-all group"
                     aria-label={social.label}
                   >
@@ -100,7 +96,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right Column - Contact Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid sm:grid-cols-2 gap-4">
               <input
@@ -157,8 +152,7 @@ const Contact = () => {
                 </>
               )}
             </button>
-            
-            {/* Success Message */}
+
             {isSubmitted && (
               <div className="flex items-center gap-2 text-secondary-500 bg-secondary-500/10 p-3 rounded-lg animate-slide-up">
                 <CheckCircle className="w-5 h-5" />
