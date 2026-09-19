@@ -29,7 +29,7 @@ const About = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-dark-100 rounded-xl p-6">
               {infoItems.map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <item.icon className="w-5 h-5 text-primary-500" />
+                  <item.icon className="w-6 h-6 text-primary-500 shrink-0" />
                   <div>
                     <p className="text-xs text-gray-400">{item.label}</p>
                     <p className="text-sm font-medium">{item.value}</p>

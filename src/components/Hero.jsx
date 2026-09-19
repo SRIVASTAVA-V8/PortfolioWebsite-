@@ -66,13 +66,13 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-16">
+    <section id="home" className="min-h-screen flex items-center justify-center relative pt-16 pb-20 sm:pb-24">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-500 rounded-full filter blur-3xl opacity-20 animate-float"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-500 rounded-full filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-24 sm:pb-28 relative z-10">
         <div className="text-center">
           <div className="inline-flex items-center gap-2 bg-primary-500/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 animate-slide-in">
             <div className="w-2 h-2 bg-secondary-500 rounded-full animate-pulse"></div>
@@ -112,7 +112,7 @@ const Hero = () => {
             </button>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 animate-slide-up px-4" style={{ animationDelay: '0.8s' }}>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 animate-slide-up px-4 mb-8 sm:mb-10" style={{ animationDelay: '0.8s' }}>
             {socialLinks.map((social, index) => (
               <a
                 key={index}
@@ -129,7 +129,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none z-20">
         <span className="text-gray-400 text-sm">Scroll Down</span>
         <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-primary-500 rounded-full mt-2 animate-bounce"></div>
