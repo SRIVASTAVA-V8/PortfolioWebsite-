@@ -20,14 +20,10 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-gray-300 leading-relaxed">
-              I'm a passionate software developer with a strong foundation in modern web technologies.
-              My journey in tech started 1 year ago, and since then, I've been dedicated to crafting
-              elegant solutions to complex problems.
-            </p>
-            <p className="text-gray-300 leading-relaxed">
-              I believe in writing clean, maintainable code and continuously learning new technologies.
-              When I'm not coding, you can find me contributing to open source, mentoring junior developers,
-              or exploring the latest tech trends.
+              Software Engineer with 1+ year of experience at Infosys, including full-stack development with the MEAN stack during an internship
+              and enterprise application development with AS400/RPGLE in a full-time role. Skilled in Angular, Node.js, Express.js, MongoDB, REST
+              APIs, and JWT authentication, with working knowledge of Agile/SDLC practices. Seeking Full Stack Developer opportunities focused
+              on MEAN/MERN technologies.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-dark-100 rounded-xl p-6">
@@ -42,34 +38,84 @@ const About = () => {
               ))}
             </div>
 
-            <button
-              type="button"
-              className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold transition-all"
+            <a href="/Vaibhavi-Srivastava-Resume.pdf" download="Vaibhavi-Srivastava-Resume.pdf"
+             className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold transition-all"
             >
-              <Download className="w-5 h-5" />
+            <Download className="w-5 h-5" />
               Download Resume
-            </button>
+            </a>
+          </div>
+          <div className="relative">
+          <div className="bg-dark-100 border border-slate-700 rounded-2xl p-8 shadow-xl">
+
+          <div className="mb-8">
+           <p className="text-sm text-primary-500 font-semibold uppercase tracking-wider">
+            My Journey
+           </p>
+
+            <h3 className="text-2xl font-bold text-white mt-2">
+              From Learning to Building
+            </h3>
           </div>
 
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl transform rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
-            <div className="relative bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl overflow-hidden">
-              <div className="aspect-square flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-8xl mb-4 animate-bounce">👨‍💻</div>
-                  <h3 className="text-2xl font-bold text-white">{personalInfo.name}</h3>
-                  <p className="text-white/80">{personalInfo.role}</p>
-                </div>
-              </div>
-            </div>
-            <div className="absolute -bottom-4 -right-4 bg-dark-100 rounded-lg p-3 shadow-xl">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-secondary-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-mono">Open for work</span>
-              </div>
+          <div className="relative">
+            <div className="absolute left-[7px] top-2 bottom-2 w-px bg-slate-700"></div>
+            <div className="relative flex gap-5 pb-8">
+              <div className="relative z-10 w-4 h-4 mt-1 rounded-full bg-primary-500 ring-4 ring-dark-100 flex-shrink-0"></div>
+            <div>
+              <span className="text-sm font-medium text-primary-500">
+               2025
+              </span>
+             <h4 className="text-lg font-semibold text-white mt-1">
+               MEAN Stack Internship
+             </h4>
+             <p className="text-sm text-slate-400 mt-1 leading-relaxed">
+              Built full-stack web applications and gained hands-on
+              experience with modern development practices.
+             </p>
             </div>
           </div>
+
+            <div className="relative flex gap-5 pb-8">
+             <div className="relative z-10 w-4 h-4 mt-1 rounded-full bg-primary-500 ring-4 ring-dark-100 flex-shrink-0"></div>
+             <div>
+               <span className="text-sm font-medium text-primary-500">
+               2025
+                </span>
+
+                <h4 className="text-lg font-semibold text-white mt-1">
+                   Joined Infosys
+                </h4>
+
+                <p className="text-sm text-slate-400 mt-1 leading-relaxed">
+                  Began my professional journey working in an enterprise
+                  development environment.
+               </p>
+              </div>
+            </div>
+
+              <div className="relative flex gap-5">
+                <div className="relative z-10 w-4 h-4 mt-1 rounded-full bg-primary-500 ring-4 ring-dark-100 flex-shrink-0"></div>
+                <div>
+                  <span className="text-sm font-medium text-primary-500">
+                    Present
+                 </span>
+
+                  <h4 className="text-lg font-semibold text-white mt-1">
+                  Growing as a Full Stack Developer
+                    </h4>
+
+                  <p className="text-sm text-slate-400 mt-1 leading-relaxed">
+                   Continuously learning, building projects, and strengthening
+                   my skills in modern web development.
+                  </p>
+                </div>
+              </div>
+
         </div>
+        </div>
+       </div>       
+          </div>
       </div>
     </section>
   );

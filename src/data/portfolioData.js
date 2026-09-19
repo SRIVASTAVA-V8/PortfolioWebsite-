@@ -5,38 +5,31 @@ export const personalInfo = {
   location: 'Pune, India',
   experience: '1+ Years',
   availability: 'Open for opportunities',
-  bio: "I'm a passionate software developer with expertise in building exceptional digital experiences. I specialize in React, Node.js, and cloud technologies, turning complex problems into elegant solutions.",
-//   stats: [
-//     { number: '4+', label: 'Years Experience' },
-//     { number: '30+', label: 'Projects Completed' },
-//     { number: '15+', label: 'Happy Clients' }
-//   ]
+  bio: "Software Engineer passionate about building modern, scalable web applications with the MEAN/MERN stack.",
 };
 
 export const skills = {
   frontend: [
-    { name: 'React.js', level: 80, icon: '⚛️' },
-    // { name: 'Next.js', level: 85, icon: '▲' },
-    { name: 'TypeScript', level: 85, icon: '📘' },
-    { name: 'Tailwind CSS', level: 88, icon: '🎨' },
-    { name: 'Angular.js', level: 90, icon: '🟢' },
-    { name: 'JavaScript.js', level: 80, icon: '🟢' },
-    {name:'Bootstrap', level: 90, icon: '🅱️'}
+    { name: 'React.js',  icon: 'R' },
+    { name: 'TypeScript',  icon: 'TS' },
+    { name: 'Tailwind CSS',  icon: 'TW' },
+    { name: 'Angular',  icon: 'A' },
+    { name: 'JavaScript',  icon: 'JS' },
+    { name: 'Bootstrap',  icon: 'BS' }
   ],
   backend: [
-    { name: 'Node.js', level: 88, icon: '🟢' },
-    { name: 'Python', level: 75, icon: '🐍' },
-    { name: 'Express.js', level: 87, icon: '🚀' },
-    { name: 'SQL', level: 82, icon: '🐘' },
-    { name: 'MongoDB', level: 80, icon: '🍃' },
-    { name: 'Java', level: 80, icon: '☕' }
+    { name: 'Node.js',  icon: 'N' },
+    { name: 'Python',  icon: 'PY' },
+    { name: 'Express.js',  icon: 'E' },
+    { name: 'SQL',  icon: 'SQL' },
+    { name: 'MongoDB',  icon: 'M' },
+    { name: 'Java',  icon: 'J' }
   ],
   tools: [
-    { name: 'Git/GitHub', level: 90, icon: '📦' },
-    { name: 'Docker', level: 78, icon: '🐳' },
-    { name: 'AWS', level: 75, icon: '☁️' },
-    // { name: 'Jenkins', level: 70, icon: '🔧' },
-    // { name: 'Figma', level: 80, icon: '🎨' }
+    { name: 'Git/GitHub',  icon: 'G' },
+    {name:'VS Code',  icon: 'V'},
+    { name: 'Postman',  icon: 'P' },
+    {name : 'Agile/SDLC',  icon: 'A'},
   ]
 };
 
@@ -48,8 +41,8 @@ export const projects = [
     tech: ['Angular', 'Node.js', 'MongoDB', 'Razorpay', 'Redux'],
     image: '🛒',
     category: 'fullstack',
-    liveLink: '#',
-    githubLink: '#',
+    liveLink: 'https://ink-quill-nu.vercel.app',
+    githubLink: 'https://github.com/SRIVASTAVA-V8/Ink-Quill',
     features: ['User auth', 'Payment gateway', 'Admin panel', 'Order tracking','inventory management', 'product reviews']
   },
   {
@@ -59,8 +52,9 @@ export const projects = [
     tech: ['Angular.js', 'Bootstrap', 'Node.js', 'MongoDb', 'chart.js'],
     image: '✅',
     category: 'fullstack',
-    liveLink: '#',
-    githubLink: '#',
+    liveLink: null,
+    githubLink: null,
+    badge: 'Internship Project',
     features: [
   'Role-based dashboards',
   'Kanban task management',
@@ -76,11 +70,12 @@ export const projects = [
     id: 3,
     title: 'Internal Communications Hub',
     description: 'Developed an Internal Communications Hub with JWT-secured access, dynamic email builder, bulk recipient uploads, and audit history',
-    tech: ['React', 'OpenWeather API', 'Chart.js', 'Leaflet'],
-    image: '🌤️',
+    tech: ['Angular.js', 'Node.js', 'Chart.js', 'MongoDB', 'JWT'],
+    image: '📡',
     category: 'fullstack',
-    liveLink: '#',
-    githubLink: '#',
+    liveLink: null,
+    githubLink: null,
+    badge: 'Internship Project',
     features:[
   'Department-based access control',
   'Drag-and-drop email builder',
@@ -110,26 +105,5 @@ export const projects = [
   'Recommendation engine'
 ]
   },
-//   {
-//     id: 5,
-//     title: 'AI Image Generator',
-//     description: 'Generate unique images using AI with custom prompts and style options.',
-//     tech: ['React', 'Python', 'TensorFlow', 'OpenAI API'],
-//     image: '🎨',
-//     category: 'fullstack',
-//     liveLink: '#',
-//     githubLink: '#',
-//     features: ['AI generation', 'Style transfer', 'Image editing', 'Gallery']
-//   },
-//   {
-//     id: 6,
-//     title: 'Social Analytics Dashboard',
-//     description: 'Real-time social media analytics with beautiful visualizations.',
-//     tech: ['Vue.js', 'D3.js', 'Express', 'MongoDB'],
-//     image: '📊',
-//     category: 'frontend',
-//     liveLink: '#',
-//     githubLink: '#',
-//     features: ['Analytics', 'Charts', 'Reports', 'Export data']
-//   }
+
 ];

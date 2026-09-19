@@ -83,17 +83,17 @@ const Hero = () => {
             Hi, I'm <span className="gradient-text">{personalInfo.name}</span>
           </h1>
 
-          <div className="text-2xl sm:text-3xl md:text-4xl font-mono mb-6 h-16">
+          <div className="text-xl sm:text-2xl md:text-4xl font-mono mb-6 h-12 sm:h-16">
             <span className="text-secondary-500">&gt; </span>
             <span className="text-primary-500">{text}</span>
             <span className="animate-pulse">_</span>
           </div>
 
-          <p className="max-w-2xl mx-auto text-gray-400 text-lg mb-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+          <p className="max-w-2xl mx-auto text-gray-400 text-base sm:text-lg mb-8 animate-slide-up px-2" style={{ animationDelay: '0.1s' }}>
             {personalInfo.bio}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-up px-4 sm:px-0" style={{ animationDelay: '0.4s' }}>
             <button
               onClick={scrollToContact}
               className="group bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2 get-in-touch-btn"
@@ -112,7 +112,7 @@ const Hero = () => {
             </button>
           </div>
 
-          <div className="flex justify-center gap-6 animate-slide-up" style={{ animationDelay: '0.8s' }}>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 animate-slide-up px-4" style={{ animationDelay: '0.8s' }}>
             {socialLinks.map((social, index) => (
               <a
                 key={index}
@@ -122,7 +122,7 @@ const Hero = () => {
                 className="text-gray-400 hover:text-primary-500 transition-colors"
                 aria-label={social.label}
               >
-                <social.icon className="w-6 h-6" />
+                <social.icon className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
             ))}
           </div>

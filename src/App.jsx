@@ -47,7 +47,7 @@ function App() {
   }
 
   return (
-    <div className="bg-dark-300 text-gray-100">
+    <div className="bg-dark-300 text-gray-100 overflow-x-hidden">
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
       <Hero />
       <About />

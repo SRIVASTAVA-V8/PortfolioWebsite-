@@ -21,15 +21,15 @@ const Skills = () => {
         </h2>
 
         {/* Category Filters */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-12 px-2">
           {Object.entries(categories).map(([key, { name, icon: Icon }]) => (
             <button
               key={key}
               onClick={() => setActiveCategory(key)}
-              className={`flex items-center gap-2 px-6 py-2 rounded-full transition-all ${
+              className={`flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300 sm:px-5 ${
                 activeCategory === key
-                  ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30'
-                  : 'bg-dark-100 text-gray-400 hover:bg-primary-500/20'
+                  ? 'border-primary-500 bg-primary-500/10 text-primary-500 shadow-lg shadow-primary-500/10'
+                  : 'border-white/10 bg-dark-100/80 text-gray-300 hover:border-primary-500/40 hover:text-white'
               }`}
             >
               <Icon className="w-4 h-4" />
@@ -39,26 +39,19 @@ const Skills = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {currentSkills.map((skill, index) => (
             <div
               key={index}
-              className="bg-dark-100 rounded-xl p-6 card-hover"
+              className="group rounded-2xl border border-white/10 bg-dark-100/80 px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-500/40 hover:bg-dark-100"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">{skill.icon}</span>
-                  <h3 className="font-semibold text-lg">{skill.name}</h3>
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-primary-500/30 bg-primary-500/10 text-[10px] font-bold uppercase tracking-widest text-primary-500">
+                  {skill.icon}
                 </div>
-                <span className="text-primary-500 font-mono">{skill.level}%</span>
-              </div>
-              <div className="w-full bg-dark-300 rounded-full h-2 overflow-hidden">
-                <div 
-                  className="bg-gradient-to-r from-primary-500 to-secondary-500 h-full rounded-full transition-all duration-1000"
-                  style={{ width: `${skill.level}%` }}
-                >
-                  <div className="w-full h-full bg-white/20 animate-pulse"></div>
+                <div className="min-w-0">
+                  <h3 className="text-sm font-semibold text-white sm:text-base">{skill.name}</h3>
                 </div>
               </div>
             </div>

@@ -47,9 +47,7 @@ const Footer = () => {
             <p className="text-gray-400">
               &copy; {currentYear} Vaibhavi Srivastava. All rights reserved.
             </p>
-            <p className="text-gray-500 text-sm flex items-center justify-center gap-1">
-              Made with <Heart className="w-4 h-4 text-red-500 animate-pulse" /> using React & Tailwind CSS
-            </p>
+            
           </div>
         </div>
       </div>

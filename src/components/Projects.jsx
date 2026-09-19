@@ -19,6 +19,10 @@ const Projects = () => {
     ? projects 
     : projects.filter(p => p.category === filter);
 
+  const hasProjectLinks = (project) => {
+    return Boolean(project.liveLink && project.liveLink !== '#') || Boolean(project.githubLink && project.githubLink !== '#');
+  };
+
   return (
     <section id="projects" className="py-20 bg-dark-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,17 +48,21 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="relative px-16">
-          <button onClick={() => swiperRef.current?.slidePrev()}
-            className="absolute left-[-50px] top-1/2 -translate-y-1/2 z-20 bg-primary-500 p-3 rounded-full hover:scale-110 transition-all"
-           >
-            <ChevronLeft />
+        <div className="relative px-2 sm:px-10 lg:px-14">
+          <button
+            onClick={() => swiperRef.current?.slidePrev()}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/10 bg-dark-200/80 text-white shadow-lg shadow-primary-500/20 backdrop-blur-sm transition-all hover:scale-110 hover:border-primary-500/60"
+            aria-label="Previous project"
+          >
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
-          <button onClick={() => swiperRef.current?.slideNext()}
-            className="absolute right-[-50px] top-1/2 -translate-y-1/2 z-20 bg-primary-500 p-3 rounded-full hover:scale-110 transition-all"
-           >
-            <ChevronRight />
+          <button
+            onClick={() => swiperRef.current?.slideNext()}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/10 bg-dark-200/80 text-white shadow-lg shadow-primary-500/20 backdrop-blur-sm transition-all hover:scale-110 hover:border-primary-500/60"
+            aria-label="Next project"
+          >
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
           <Swiper
           onSwiper ={(swiper)=>{
@@ -77,10 +85,16 @@ const Projects = () => {
             <SwiperSlide key={project.id} className="h-auto">  
               <div
                 // key={project.id}
-                className="bg-dark-100 rounded-xl overflow-hidden card-hover cursor-pointer h-[520px] flex flex-col"
+                className="bg-dark-100 rounded-xl overflow-hidden card-hover cursor-pointer h-[500px] sm:h-[520px] flex flex-col relative"
                 onMouseEnter={() => setHoveredId(project.id)}
                 onMouseLeave={() => setHoveredId(null)}
                >
+
+                {project.badge && (
+                  <span className="absolute right-3 top-3 z-10 inline-flex items-center rounded-full border border-amber-400/30 bg-amber-500/15 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-amber-200 shadow-sm">
+                    {project.badge}
+                  </span>
+                )}
 
                {/* Project Image */}
                 <div className="h-48 bg-gradient-to-br from-primary-500/20 to-secondary-500/20 flex items-center justify-center relative overflow-hidden">
@@ -88,15 +102,39 @@ const Projects = () => {
                     {project.image}
                    </div>
                   {/* Overlay on Hover */}
-                  <div className={`absolute inset-0 bg-primary-500/80 flex items-center justify-center gap-4 transition-opacity duration-300 ${
+                  <div className={`absolute inset-0 bg-primary-500/80 flex items-center justify-center transition-opacity duration-300 ${
                     hoveredId === project.id ? 'opacity-100' : 'opacity-0'
                   }`}>
-                  <a href={project.liveLink} className="bg-white text-dark-300 p-2 rounded-full hover:scale-110 transition-transform">
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
-                  <a href={project.githubLink} className="bg-white text-dark-300 p-2 rounded-full hover:scale-110 transition-transform">
-                    <FiGithub className="w-5 h-5" />
-                  </a>
+                    {hasProjectLinks(project) ? (
+                      <div className="flex items-center gap-4">
+                        {project.liveLink && project.liveLink !== '#' && (
+                          <a
+                            href={project.liveLink}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="bg-white text-dark-300 p-2 rounded-full hover:scale-110 transition-transform"
+                            aria-label={`Open live project for ${project.title}`}
+                          >
+                            <ExternalLink className="w-5 h-5" />
+                          </a>
+                        )}
+                        {project.githubLink && project.githubLink !== '#' && (
+                          <a
+                            href={project.githubLink}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="bg-white text-dark-300 p-2 rounded-full hover:scale-110 transition-transform"
+                            aria-label={`Open GitHub project for ${project.title}`}
+                          >
+                            <FiGithub className="w-5 h-5" />
+                          </a>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="rounded-full border border-white/30 bg-dark-200/70 px-4 py-2 text-sm font-medium text-white/90 shadow-lg backdrop-blur-sm">
+                        No links available
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -120,7 +158,7 @@ const Projects = () => {
                   </div>
 
                   {/* Features */}
-                  <div className="flex flex-wrap gap-1 mt-auto pt-4 ">
+                  <div className="flex flex-wrap gap-1 mt-auto pt-4">
                      {project.features.slice(0, 4).map((feature, idx) => (
                     <span key={idx} className="text-xs text-gray-500">• {feature}</span>
                      ))}
