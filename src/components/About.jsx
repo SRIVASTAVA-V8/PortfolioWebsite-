@@ -38,7 +38,7 @@ const About = () => {
               ))}
             </div>
 
-            <a href="/Vaibhavi-Srivastava-Resume.pdf" download="Vaibhavi-Srivastava-Resume.pdf"
+            <a href="/Vaibhavi_Srivastava_Resume.pdf" download="Vaibhavi_Srivastava_Resume.pdf"
              className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold transition-all"
             >
             <Download className="w-5 h-5" />
