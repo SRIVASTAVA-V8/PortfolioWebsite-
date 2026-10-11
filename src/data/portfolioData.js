@@ -95,7 +95,7 @@ export const projects = [
     image: '�',
     category: 'backend',
     liveLink: '#',
-    githubLink: '#',
+    githubLink: 'https://github.com/SRIVASTAVA-V8/Book-Recommender-System',
     features: [
   'Collaborative filtering',
   'Book recommendations',
